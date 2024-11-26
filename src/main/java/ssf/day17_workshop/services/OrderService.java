@@ -1,5 +1,7 @@
 package ssf.day17_workshop.services;
 
+import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +22,12 @@ public class OrderService {
 
         return orderId;
     }
+
+    public Set<String> getOrderIds() {
+        return orderRepo.getOrderIds();
+    }
     
+    public Optional<Order> getOrder(String orderId) {
+        return orderRepo.getOrder(orderId);
+    }
 }
